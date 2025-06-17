@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundraising - LearnerCanvas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #4a4a4a;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1em;
+        }
+
+        main {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .campaign-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .campaign-card {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .campaign-card img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+        }
+
+        .campaign-details {
+            flex-grow: 1;
+        }
+
+        .donate-btn {
+            background: #007BFF;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .donate-btn:hover {
+            background: #0056b3;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .nav-btn {
+            background: #28a745;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            border-radius: 5px;
+            font-size: 1.2em;
+        }
+
+        .nav-btn:hover {
+            background: #218838;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="LearnerCanvas Logo">
+            <h1>LearnerCanvas</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">My Projects</a></li>
+                <li><a href="#">Messaging</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Success Stories</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Support Startup Fundraising Initiatives</h2>
+
+        <div class="campaign-list">
+            <div class="campaign-card">
+                <img src="fund1.jpg" alt="Campaign 1">
+                <div class="campaign-details">
+                    <h3>Diabetes Care Cross-Platform App</h3>
+                    <p>Helping users track blood sugar levels, medication reminders, meal planning, and activity logging.</p>
+                    <button class="donate-btn">Give Money</button>
+                </div>
+            </div>
+
+            <div class="campaign-card">
+                <img src="fund2.jpg" alt="Campaign 2">
+                <div class="campaign-details">
+                    <h3>Renewable Energy Startup</h3>
+                    <p>Developing solar-powered solutions for rural areas to improve access to clean electricity.</p>
+                    <button class="donate-btn">Give Money</button>
+                </div>
+            </div>
+
+            <div class="campaign-card">
+                <img src="fund3.jpg" alt="Campaign 3">
+                <div class="campaign-details">
+                    <h3>AI-Powered Education Platform</h3>
+                    <p>Creating personalized learning experiences using AI to enhance student engagement and retention.</p>
+                    <button class="donate-btn">Give Money</button>
+                </div>
+            </div>
+
+            <div class="campaign-card">
+                <img src="fund4.jpg" alt="Campaign 4">
+                <div class="campaign-details">
+                    <h3>Smart Agriculture System</h3>
+                    <p>Using IoT to improve crop monitoring and yield prediction for farmers.</p>
+                    <button class="donate-btn">Give Money</button>
+                </div>
+            </div>
+
+            <div class="campaign-card">
+                <img src="fund5.jpg" alt="Campaign 5">
+                <div class="campaign-details">
+                    <h3>Affordable Healthcare Devices</h3>
+                    <p>Innovative low-cost medical devices for remote and underserved communities.</p>
+                    <button class="donate-btn">Give Money</button>
+                </div>
+            </div>
+
+            <div class="campaign-card">
+                <img src="fund6.jpg" alt="Campaign 6">
+                <div class="campaign-details">
+                    <h3>Water Purification Tech</h3>
+                    <p>Building affordable and sustainable water purification solutions for developing regions.</p>
+                    <button class="donate-btn">Give Money</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <button class="nav-btn">Back</button>
+            <button class="nav-btn">Next</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 LearnerCanvas. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

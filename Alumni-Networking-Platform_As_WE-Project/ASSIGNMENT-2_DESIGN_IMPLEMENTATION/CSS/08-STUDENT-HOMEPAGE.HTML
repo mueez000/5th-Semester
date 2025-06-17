@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Home - Alumni Networking Platform</title>
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #4a4a4a;
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        nav {
+            text-align: right;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1em;
+        }
+
+        .welcome {
+            text-align: center;
+            font-size: 1.8em;
+            margin: 20px 0;
+            color: #333;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px;
+            text-align: center;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            flex: 1;
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background: #007BFF;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            margin-top: 10px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .cards {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="LearnerCanvas Logo">
+            <h1>LearnerCanvas</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">My Projects</a></li>
+                <li><a href="#">Messaging</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Success Stories</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="welcome">
+        <h2>Welcome back, Mueez!</h2>
+    </div>
+
+    <main>
+        <section>
+            <h2>Explore Your Opportunities</h2>
+            <br>
+            <div class="cards">
+                <article class="card">
+                    <img src="mentorship.jpg" alt="Mentorship">
+                    <h3>AI Mentorship</h3>
+                    <p>Get matched with experienced mentors using AI-powered recommendations. Learn, grow, and succeed with guidance.</p>
+                    <button onclick="window.location.href='mentorship.html'">Explore</button>
+                </article>
+                <article class="card">
+                    <img src="learn-earn.jpg" alt="Learn and Earn">
+                    <h3>Learn & Earn</h3>
+                    <p>Work on real-world freelance projects, enhance your skills, and earn while you learn. Start your journey today!</p>
+                    <button onclick="window.location.href='learn-earn.html'">Start</button>
+                </article>
+                <article class="card">
+                    <img src="fundraising.jpg" alt="Fundraising">
+                    <h3>Fundraising</h3>
+                    <p>Empower innovation by supporting student-led startups. Invest, collaborate, and help shape the next big ideas.</p>
+                    <button onclick="window.location.href='fundraising.html'">Support</button>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 LearnerCanvas. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

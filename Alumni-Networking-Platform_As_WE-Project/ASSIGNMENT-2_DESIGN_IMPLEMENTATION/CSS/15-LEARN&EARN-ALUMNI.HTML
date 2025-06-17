@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn & Earn - Alumni Network</title>
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #4a4a4a;
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1em;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 40px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .toggle-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .toggle-label {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 30px;
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #ccc;
+            transition: 0.4s;
+            border-radius: 30px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 22px;
+            width: 22px;
+            left: 4px;
+            bottom: 4px;
+            background: white;
+            transition: 0.4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background: #007BFF;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(30px);
+        }
+
+        .form-section {
+            display: none;
+        }
+
+        .active-form {
+            display: block;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1em;
+        }
+
+        .form-actions {
+            margin-top: 25px;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .submit-btn {
+            background: #28a745;
+            color: #fff;
+            padding: 12px 35px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #218838;
+        }
+
+        footer {
+            background: #4a4a4a;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="LearnerCanvas Logo">
+            <h1>LearnerCanvas</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">My Projects</a></li>
+                <li><a href="#">Messaging</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Success Stories</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="toggle-container">
+            <span class="toggle-label">Job</span>
+            <label class="toggle-switch">
+                <input type="checkbox" id="toggleSwitch" onclick="toggleForm()">
+                <span class="slider"></span>
+            </label>
+            <span class="toggle-label">Freelance</span>
+        </div>
+
+        <!-- Job Posting Form -->
+        <form id="jobForm" class="form-section active-form">
+            <h2>Post Alumni Job Opportunity</h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Job Title</label>
+                    <input type="text" placeholder="Enter job title" required>
+                </div>
+                <div class="form-group">
+                    <label>Company Name</label>
+                    <input type="text" placeholder="Enter company name" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Job Location</label>
+                    <input type="text" placeholder="Enter location" required>
+                </div>
+                <div class="form-group">
+                    <label>Employment Type</label>
+                    <select>
+                        <option>Full-time</option>
+                        <option>Part-time</option>
+                        <option>Contract</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Application Deadline</label>
+                    <input type="date" required>
+                </div>
+                <div class="form-group">
+                    <label>Website</label>
+                    <input type="url" placeholder="Company website">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Experience Required</label>
+                <input type="text" placeholder="Enter experience requirements">
+            </div>
+
+            <div class="form-group">
+                <label>Skills & Interests</label>
+                <textarea rows="3" placeholder="List required skills"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Job Description</label>
+                <textarea rows="5" placeholder="Detailed job description" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Required Documents</label>
+                <input type="text" placeholder="List required documents">
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="submit-btn">Post Job</button>
+            </div>
+        </form>
+
+        <!-- Freelance Project Form -->
+        <form id="freelanceForm" class="form-section">
+            <h2>Create Freelance Project</h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Project Title</label>
+                    <input type="text" placeholder="Enter project title" required>
+                </div>
+                <div class="form-group">
+                    <label>Company Name</label>
+                    <input type="text" value="Main Media Software No." readonly>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Project Location</label>
+                    <input type="text" value="Online" readonly>
+                </div>
+                <div class="form-group">
+                    <label>Employment Type</label>
+                    <select>
+                        <option>Intervals</option>
+                        <option>Fixed-term</option>
+                        <option>Ongoing</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Project Deadline</label>
+                    <input type="number" value="7" min="1" placeholder="Days">
+                </div>
+                <div class="form-group">
+                    <label>Website</label>
+                    <input type="email" placeholder="Provides email">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Experience Req</label>
+                <input type="text" value="Tokens" readonly>
+            </div>
+
+            <div class="form-group">
+                <label>Skills & Interests Req</label>
+                <textarea rows="3" placeholder="Required skills"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Project Description</label>
+                <textarea rows="5" placeholder="Detailed project description" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Required Documents</label>
+                <input type="text" value="Feedbacked by files" readonly>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="submit-btn">Submit Project</button>
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 LearnerCanvas. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function toggleForm() {
+            const jobForm = document.getElementById('jobForm');
+            const freelanceForm = document.getElementById('freelanceForm');
+            const toggle = document.getElementById('toggleSwitch').checked;
+
+            jobForm.style.display = toggle ? 'none' : 'block';
+            freelanceForm.style.display = toggle ? 'block' : 'none';
+        }
+    </script>
+</body>
+</html>

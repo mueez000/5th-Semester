@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn & Earn - Student Job Page</title>
+    <style>
+        /* All previous CSS remains unchanged */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #4a4a4a;
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1em;
+        }
+
+        main {
+            max-width: 900px;
+            margin: auto;
+            padding: 40px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .toggle-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .toggle-label {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 30px;
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #ccc;
+            transition: 0.4s;
+            border-radius: 30px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 22px;
+            width: 22px;
+            left: 4px;
+            bottom: 4px;
+            background: white;
+            transition: 0.4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background: #007BFF;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(30px);
+        }
+
+        .job-card {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .job-card img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+        }
+
+        .job-details {
+            text-align: left;
+            flex-grow: 1;
+        }
+
+        .apply-btn {
+            background: #007BFF;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .apply-btn:hover {
+            background: #0056b3;
+        }
+
+        .job-list, .freelance-list {
+            display: none;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .nav-btn {
+            background: #28a745;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            border-radius: 5px;
+            font-size: 1.2em;
+        }
+
+        .nav-btn:hover {
+            background: #218838;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="LearnerCanvas Logo">
+            <h1>LearnerCanvas</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">My Projects</a></li>
+                <li><a href="#">Messaging</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Success Stories</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Learn & Earn - Student Job Opportunities</h2>
+
+        <div class="toggle-container">
+            <span class="toggle-label">Jobs</span>
+            <label class="toggle-switch">
+                <input type="checkbox" id="toggleSwitch" onclick="toggleView()">
+                <span class="slider"></span>
+            </label>
+            <span class="toggle-label">Freelance</span>
+        </div>
+
+        <div id="jobList" class="job-list">
+            <div class="job-card"><img src="job1.jpg"><div class="job-details"><h3>Web Developer</h3><p>Company: TechSavvy</p><p>Develop responsive websites using modern frameworks</p><button class="apply-btn">Apply</button></div></div>
+            <div class="job-card"><img src="job2.jpg"><div class="job-details"><h3>AI Research Assistant</h3><p>Company: AI Innovators</p><p>Machine learning model development and testing</p><button class="apply-btn">Apply</button></div></div>
+            <div class="job-card"><img src="job3.jpg"><div class="job-details"><h3>Data Analyst</h3><p>Company: InfoMetrics</p><p>Analyze business data and create reports</p><button class="apply-btn">Apply</button></div></div>
+            <div class="job-card"><img src="job4.jpg"><div class="job-details"><h3>Mobile App Developer</h3><p>Company: AppWorks</p><p>Cross-platform mobile app development</p><button class="apply-btn">Apply</button></div></div>
+            <div class="job-card"><img src="job5.jpg"><div class="job-details"><h3>Marketing Intern</h3><p>Company: DigitalBoost</p><p>Social media management and campaign analysis</p><button class="apply-btn">Apply</button></div></div>
+            <div class="job-card"><img src="job6.jpg"><div class="job-details"><h3>UI/UX Designer</h3><p>Company: DesignHub</p><p>Create user interfaces and design systems</p><button class="apply-btn">Apply</button></div></div>
+        </div>
+
+        <div id="freelanceList" class="freelance-list">
+            <div class="job-card"><img src="freelance1.jpg"><div class="job-details"><h3>Graphic Designer</h3><p>Client: Creative Minds</p><p>Logo and branding package design</p><button class="apply-btn">Apply</button></div></div>
+            <div class="job-card"><img src="freelance2.jpg"><div class="job-details"><h3>Content Writer</h3><p>Client: DigitalWords</p><p>Blog writing and SEO optimization</p><button class="apply-btn">Apply</button></div></div>
+            <div class="job-card"><img src="freelance3.jpg"><div class="job-details"><h3>Social Media Manager</h3><p>Client: TrendSetters</p><p>Manage Instagram and TikTok accounts</p><button class="apply-btn">Apply</button></div></div>
+            <div class="job-card"><img src="freelance4.jpg"><div class="job-details"><h3>Video Editor</h3><p>Client: VisualStory</p><p>Edit podcast episodes and YouTube videos</p><button class="apply-btn">Apply</button></div></div>
+            <div class="job-card"><img src="freelance5.jpg"><div class="job-details"><h3>SEO Specialist</h3><p>Client: WebRankers</p><p>Website optimization and keyword research</p><button class="apply-btn">Apply</button></div></div>
+            <div class="job-card"><img src="freelance6.jpg"><div class="job-details"><h3>Translator</h3><p>Client: GlobalSpeak</p><p>English to Spanish document translation</p><button class="apply-btn">Apply</button></div></div>
+        </div>
+
+        <div class="navigation">
+            <button class="nav-btn">Back</button>
+            <button class="nav-btn">Next</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 LearnerCanvas. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function toggleView() {
+            document.getElementById("jobList").style.display = document.getElementById("toggleSwitch").checked ? "none" : "block";
+            document.getElementById("freelanceList").style.display = document.getElementById("toggleSwitch").checked ? "block" : "none";
+        }
+        window.onload = toggleView;
+    </script>
+</body>
+</html>

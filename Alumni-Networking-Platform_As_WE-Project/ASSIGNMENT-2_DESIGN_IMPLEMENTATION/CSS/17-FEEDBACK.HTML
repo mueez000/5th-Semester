@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback - LearnerCanvas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #4a4a4a;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1em;
+        }
+
+        main {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .feedback-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        select, textarea, input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background: #007BFF;
+            color: white;
+            padding: 12px;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1em;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="LearnerCanvas Logo">
+            <h1>LearnerCanvas</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">My Projects</a></li>
+                <li><a href="#">Messaging</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Success Stories</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>University Experience Feedback</h2>
+
+        <form class="feedback-form">
+            <label for="satisfaction">Overall Satisfaction:</label>
+            <select id="satisfaction">
+                <option>Poor</option>
+                <option>Average</option>
+                <option>Good</option>
+                <option>Excellent</option>
+            </select>
+
+            <label for="education">Quality of Education:</label>
+            <textarea id="education" placeholder="Were courses relevant to industry needs?"></textarea>
+
+            <label for="faculty">Faculty & Mentorship:</label>
+            <textarea id="faculty" placeholder="Were professors supportive & knowledgeable?"></textarea>
+
+            <label for="facilities">Campus Facilities & Resources:</label>
+            <select id="facilities">
+                <option>Poor</option>
+                <option>Average</option>
+                <option>Good</option>
+                <option>Excellent</option>
+            </select>
+
+            <label for="networking">Extracurricular & Networking Opportunities:</label>
+            <textarea id="networking" placeholder="Clubs, internships, industry collaborations"></textarea>
+
+            <label for="career">Career Preparation:</label>
+            <textarea id="career" placeholder="Job readiness, soft skills, internships"></textarea>
+
+            <label for="alumni">Alumni Networking Programs:</label>
+            <textarea id="alumni" placeholder="Suggestions for alumni events or programs"></textarea>
+
+            <label for="improvements">University Improvements:</label>
+            <textarea id="improvements" placeholder="Curriculum updates, career services, tech resources, etc."></textarea>
+
+            <label for="industry-support">Industry Partnerships & Job Placement Support:</label>
+            <textarea id="industry-support" placeholder="Feedback on industry collaborations"></textarea>
+
+            <label for="comments">Additional Comments:</label>
+            <textarea id="comments" placeholder="Any other suggestions or concerns?"></textarea>
+
+            <button type="submit">Submit Feedback</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 LearnerCanvas. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
